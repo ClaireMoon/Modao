@@ -5,9 +5,7 @@
   </div>
 </template>
 <script>
-export default {
-  
-}
+export default {}
 </script>
 
 <style lang="scss">
@@ -29,6 +27,7 @@ html, body, #app {
     @include rect(100%, auto); // 因为flex(),垂直方向默认宽度为.1px
     @include flexbox();
     @include flex-direction(column);
+    @include overflow(auto);
     .header {
       @include rect(100%,.44rem);
       @include background-color(rgb(59, 89, 243));
@@ -44,6 +43,7 @@ html, body, #app {
       @include flex(); // 因为flex()，垂直方向垂直宽度为1px
       @include rect(100%,100%);
       // @include margin(.15rem);
+      @include overflow(auto);
     }
   }
   .footer {

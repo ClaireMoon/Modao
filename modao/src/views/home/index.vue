@@ -84,8 +84,15 @@ export default {
       display: flex;
       justify-content: space-around;
       padding: 0 .08rem;
-      span{ width: .5rem; height: .5rem; border-radius: 50%; background-color: rgb(143, 171, 255); 
-      display: flex; align-items: center; justify-content: center; }
+      span{
+        width: .5rem;
+        height: .5rem;
+        border-radius: 50%;
+        background-color: rgb(143, 171, 255);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
     }
     .recommend{
       li{
