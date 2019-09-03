@@ -53,7 +53,7 @@ html, body, #app {
         @include flexbox();
         @include flex-direction(column);
         @include justify-content();
-        @include align-items();
+        @include align-items(); 
         @include background-color(#f2f2f2);
         span{
           @include font-size(1.5rem);
