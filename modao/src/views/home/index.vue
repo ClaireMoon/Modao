@@ -51,10 +51,8 @@ export default {
   },
   mounted () {
     axios.get('https://www.daxunxun.com/banner').then(res => { // 请求数据成功
-    /**
-     * ['/images/1.jpg']
-     * ['https://www.daxunxun.com/images/1.jpg']
-     */
+    //  ['/images/1.jpg']
+    //  ['https://www.daxunxun.com/images/1.jpg']
       let arr = []
       res.data.map(item => {
         arr.push('https://www.daxunxun.com' + item)
