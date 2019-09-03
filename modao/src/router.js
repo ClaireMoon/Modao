@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Footer from '@/components/Footer.vue';
+import Footer from '@/components/Footer.vue'
 
 Vue.use(Router)
 
@@ -15,15 +15,38 @@ export default new Router({
     {
       path: '/home',
       name: 'home',
-      components:{
+      components: {
         default: () => import('@/views/home/index.vue'),
         footer: Footer
-      } 
+      }
+    },
+    {
+      path: '/company',
+      name: 'company',
+      component: () => import('@/views/home/company.vue')
+    },
+    {
+      path: '/relationship',
+      name: 'relationship',
+      components: {
+        default: () => import('@/views/home/relationship.vue'),
+        footer: Footer
+      }
+    },
+    {
+      path: '/interview',
+      name: 'interview',
+      component: () => import('@/views/home/interview.vue')
+    },
+    {
+      path: '/question',
+      name: 'question',
+      component: () => import('@/views/home/question.vue')
     },
     {
       path: '/bird',
       name: 'bird',
-      components:{
+      components: {
         default: () => import('@/views/bird/index.vue'),
         footer: Footer
       }
@@ -31,7 +54,7 @@ export default new Router({
     {
       path: '/news',
       name: 'news',
-      components:{
+      components: {
         default: () => import('@/views/news/index.vue'),
         footer: Footer
       }
@@ -39,7 +62,7 @@ export default new Router({
     {
       path: '/user',
       name: 'user',
-      components:{
+      components: {
         default: () => import('@/views/user/index.vue'),
         footer: Footer
       }

@@ -15,10 +15,10 @@
       </van-search> -->
       <van-search placeholder="请输入搜索关键词" v-model="value" />
       <div class="nav">
-        <span class="company">看公司</span>
-        <span class="rltship">人脉</span>
-        <span class="interview">面试</span>
-        <span class="question">问答</span>
+        <router-link to="/company" tag="span" class="company">看公司</router-link>
+        <router-link to="/relationship" tag="span" class="rltship">人脉</router-link>
+        <router-link to="/interview" tag="span" class="interview">面试</router-link>
+        <router-link to="/question" tag="span" class="question">问答</router-link>
       </div>
       <ul class="recommend">
         <li>
@@ -206,8 +206,15 @@ export default {
       justify-content: space-around;
       margin: 2.0rem 2.0rem;
       font-size: .88rem;
-      span{ width: 3.75rem; height: 3.75rem; border-radius: 50%; background-color: rgb(143, 171, 255); 
-      display: flex; align-items: center; justify-content: center; }
+      span{
+        width: 3.75rem;
+        height: 3.75rem;
+        border-radius: 50%;
+        background-color: rgb(143, 171, 255);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
     }
     .recommend{
       li{
@@ -240,14 +247,13 @@ export default {
               margin:.5rem 0;
               display: flex;
               justify-content: space-around;
-              color: #828282;
-              span{}
+              color: #828282; // span{}
             }
             span{
               color: #828282;
             }
           }
-          .contImg{ 
+          .contImg{
             width: 6.88rem;
             background-color: #f99;
           }
@@ -278,7 +284,7 @@ export default {
               width: 9.38rem;
               height: 6.56rem;
             }
-            p{ 
+            p{
               text-align: center;
               font-size: .88rem;
               color: #5E5E5E;
@@ -298,8 +304,7 @@ export default {
           justify-content: space-between;
           padding: 2.5rem 1rem 0 1rem;
           color: #686767;
-          span{font-size: .88rem;}
-          .more{}
+          span{font-size: .88rem;} // .more{}
         }
       }
     }
