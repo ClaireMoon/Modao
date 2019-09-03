@@ -21,7 +21,8 @@
         <router-link to="/question" tag="span" class="question">问答</router-link>
       </div>
       <ul class="recommend">
-        <li>
+        <!-- <li class="proitem" v-for="item of test" :key="item.id" @click="goDetail(item.id)"> -->
+        <li @click="goDetail">
           <div class="title">
             <div class="title_l">推荐</div>
             <div class="title_r">换一批</div>
@@ -169,6 +170,11 @@ export default {
   data () {
     return {
       bannerlist: []
+    }
+  },
+  methods: {
+    goDetail () {
+      this.$router.push({ path: 'detail/' })
     }
   },
   mounted () {

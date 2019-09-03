@@ -21,6 +21,15 @@ export default new Router({
       }
     },
     {
+      // path: '/detail/:id', // :id中的id代表参数的名称
+      // name: 'detail', // 命名路由
+      path: '/detail',
+      name: 'detail',
+      components: {
+        default: () => import('@/views/detail/detail.vue')
+      }
+    },
+    {
       path: '/company',
       name: 'company',
       component: () => import('@/views/home/company.vue')
