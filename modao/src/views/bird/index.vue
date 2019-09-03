@@ -76,19 +76,42 @@
           </div>
         </div>
         <span class="fast">以下问题正在急切寻求帮助</span>
-        <prolist :prolist = "prolist"></prolist>
+        <van-list v-model="loading" :finished="finished" finished-text="没有更多了" @load="onLoad">
+          <prolist :prolist = "prolist"></prolist>
+        </van-list>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import Vue from 'vue'
+import { List } from 'vant'
 import axios from 'axios'
 import Prolist from '@/components/Prolist'
+
+Vue.use(List)
 export default {
   data () {
     return {
-      prolist: []
+      prolist: [],
+      pageCode: 1,
+      loading: false,
+      finished: false
+    }
+  },
+  methods: {
+    onLoad () {
+      this.loading = true
+      axios.get('https://www.daxunxun.com/douban?count=20&start=' + this.pageCode * 20).then(res => {
+        this.loading = false
+        this.pageCode++
+        if (res.data.length === 0) {
+          this.finished = true
+        } else {
+          this.prolist = [...this.prolist, ...res.data]
+        }
+      })
     }
   },
   components: {
@@ -115,6 +138,7 @@ export default {
       @include flexbox();
       align-items: center;
       justify-content: space-around;
+      padding-left: 35px;
       .left {
         font-size:12px;
         color:#5E5E5E;
