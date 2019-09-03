@@ -43,7 +43,7 @@
           <div class="contInfo_t">
             <div class="contInfo_t_l">
               <p>广东利尔化学</p>
-              <span class="score">5.0分</span>              
+              <span class="score">5.0分</span>
             </div>
             <span class="foucus"> + 关注</span>
           </div>
@@ -67,7 +67,7 @@
           <div class="contInfo_t">
             <div class="contInfo_t_l">
               <p>广东利尔化学</p>
-              <span class="score">5.0分</span>              
+              <span class="score">5.0分</span>
             </div>
             <span class="foucus"> + 关注</span>
           </div>
@@ -91,7 +91,7 @@
           <div class="contInfo_t">
             <div class="contInfo_t_l">
               <p>广东利尔化学</p>
-              <span class="score">5.0分</span>              
+              <span class="score">5.0分</span>
             </div>
             <span class="foucus"> + 关注</span>
           </div>
@@ -115,7 +115,7 @@
           <div class="contInfo_t">
             <div class="contInfo_t_l">
               <p>广东利尔化学</p>
-              <span class="score">5.0分</span>              
+              <span class="score">5.0分</span>
             </div>
             <span class="foucus"> + 关注</span>
           </div>
@@ -139,7 +139,7 @@
           <div class="contInfo_t">
             <div class="contInfo_t_l">
               <p>广东利尔化学</p>
-              <span class="score">5.0分</span>              
+              <span class="score">5.0分</span>
             </div>
             <span class="foucus"> + 关注</span>
           </div>
@@ -163,7 +163,7 @@
           <div class="contInfo_t">
             <div class="contInfo_t_l">
               <p>广东利尔化学</p>
-              <span class="score">5.0分</span>              
+              <span class="score">5.0分</span>
             </div>
             <span class="foucus"> + 关注</span>
           </div>
@@ -187,7 +187,7 @@
           <div class="contInfo_t">
             <div class="contInfo_t_l">
               <p>广东利尔化学</p>
-              <span class="score">5.0分</span>              
+              <span class="score">5.0分</span>
             </div>
             <span class="foucus"> + 关注</span>
           </div>
@@ -209,14 +209,14 @@
   </div>
 </template>
 <script>
-import Vue from 'vue'  
+import Vue from 'vue'
 import { Icon } from 'vant'
 Vue.use(Icon)
 export default {
   methods: {
     back () {
       // this.$router.push({ path: 'relationship'})
-      this.$router.back();
+      this.$router.back()
     }
   }
 }
@@ -301,7 +301,7 @@ export default {
             border: #7b7b7b 1px solid;
             border-radius: .81rem;
             text-align: center;
-          }          
+          }
         }
         .contInfo_c {
           display: flex;

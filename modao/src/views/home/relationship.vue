@@ -101,7 +101,7 @@
 </template>
 <script>
 import Vue from 'vue'
-import { Icon, Search  } from 'vant'
+import { Icon, Search } from 'vant'
 Vue.use(Icon)
 Vue.use(Search)
 export default {
@@ -164,7 +164,7 @@ export default {
       }
     }
     .more {
-      display: flex;          
+      display: flex;
       align-items: center;
       color: #c8c8c8;
       font-size: .8rem;
