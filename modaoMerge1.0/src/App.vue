@@ -5,9 +5,7 @@
   </div>
 </template>
 <script>
-export default {
-  
-}
+export default {}
 </script>
 
 <style lang="scss">
@@ -26,11 +24,11 @@ html, body, #app {
   .container {
     // -webkit-box-flex: 1; -ms-flex: 1; flex: 1; width: .1px;
     @include flex();
-    @include rect(100%, auto); // 因为flex(),垂直方向默认宽度为.1px
+    @include rect(100%, 100%); // 因为flex(),垂直方向默认宽度为.1px
     @include flexbox();
     @include flex-direction(column);
     .header {
-      @include rect(100%,.44rem);
+      @include rect(100%,2.44rem);
       @include background-color(rgb(59, 89, 243));
       @include font-weight(500);
       @include flexbox();
@@ -38,36 +36,39 @@ html, body, #app {
       @include align-items(); // 垂直居中
       @include color(#fff);
       @include font-weight(600);
-      @include font-size(16px);
+      @include font-size(.88rem);
     }
     .content {
       @include flex(); // 因为flex()，垂直方向垂直宽度为1px
       @include rect(100%,100%);
-      // @include margin(.15rem);
+      @include overflow(auto);
     }
   }
   .footer {
-    @include rect(100%,.55rem);
-    @include background-color(#e0e0e0);
+    @include rect(100%,3.38rem);
     ul{
       @include rect(100%, 100%);
       @include flexbox();
+      @include justify-content();
+      @include align-items();
       li{
         @include flex();
         @include flexbox();
         @include flex-direction(column);
         @include justify-content();
         @include align-items();
+        @include background-color(#f2f2f2);
+        span{
+          @include font-size(1.5rem);
+        }
+        p{
+          @include font-size(.75rem);
+        }
         &.router-link-active{
-          @include color(rgb(55, 16, 213));
+          @include background-color(#dfdfdf);
           @include font-weight(800);
-      }
-      }
-      span{
-        @include font-size(.24rem);
-      }
-      p{
-        @include font-size(.12rem);
+          @include color(rgb(15, 25, 209));
+        }
       }
     }
   }
