@@ -204,7 +204,12 @@ Vue.use(Icon)
 Vue.use(Row).use(Col)
 
 export default {
-  
+  methods: {
+    back () {
+      // this.$router.push({ path: 'relationship'})
+      this.$router.back()
+    }
+  }
 }
 </script>
 <style lang="scss">
