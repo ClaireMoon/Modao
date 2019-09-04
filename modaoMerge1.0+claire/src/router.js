@@ -69,6 +69,14 @@ export default new Router({
       }
     },
     {
+      path: '/contact',
+      name: 'contact',
+      components: {
+        default: () => import('@/views/contact/index.vue'),
+        footer: Footer
+      }
+    },
+    {
       path: '/user',
       name: 'user',
       components: {

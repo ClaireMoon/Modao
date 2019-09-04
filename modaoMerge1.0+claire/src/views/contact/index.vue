@@ -1,0 +1,196 @@
+<template>
+  <div class="container">
+    <div class="content">
+      <div class="header_relationship">
+        <div class="header_title">
+          <div class="contact" @click="contact">
+            <van-icon name="arrow-left" size="1.25rem"/>
+          </div>
+          <p>通讯录</p>
+          <div class="add"></div>
+        </div>
+      </div>
+      <van-search placeholder="请输入搜索关键词" v-model="value" />
+      <div class="waiting">
+        <div class="waiting_l">
+          <img src="../../../public/img/1.jpg" alt="">
+          <div class="waiting_cont">
+            <span>待处理事项</span>
+            <p>3个请求待处理。</p>
+            <div class="img_box">
+              <img src="../../../public/img/2.jpg" alt="">
+              <img src="../../../public/img/1.jpg" alt="">
+              <img src="../../../public/img/4.jpg" alt="">
+            </div>
+          </div>
+        </div>
+        <i>昨天</i>
+      </div>
+      <ul class="thingList">
+        <li>
+          <img src="../../../public/img/5.jpg" alt="">
+          <div class="thingList_cont">
+            <span>待处理事项</span>
+            <p>3个请求待处理。</p>
+          </div>
+        </li>
+        <li>
+          <img src="../../../public/img/6.jpg" alt="">
+          <div class="thingList_cont">
+            <span>待处理事项</span>
+            <p>3个请求待处理。</p>
+          </div>
+        </li>
+        <li>
+          <img src="../../../public/img/2.jpg" alt="">
+          <div class="thingList_cont">
+            <span>待处理事项</span>
+            <p>3个请求待处理。</p>
+          </div>
+        </li>
+        <li>
+          <img src="../../../public/img/4.jpg" alt="">
+          <div class="thingList_cont">
+            <span>待处理事项</span>
+            <p>3个请求待处理。</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+</div>
+</template>
+<script>
+import Vue from 'vue'
+import { Swipe, SwipeItem, Icon, Row, Col, Search } from 'vant'
+import axios from 'axios'
+
+Vue.use(Icon)
+Vue.use(Swipe).use(SwipeItem)
+Vue.use(Row).use(Col)
+Vue.use(Search)
+
+export default {
+  methods: {
+    contact () {
+      // this.$router.push({ path: 'relationship'})
+      this.$router.back()
+    }
+  },
+  data () {
+    return {
+      bannerlist: []
+    }
+  },
+  mounted () {
+    axios.get('https://www.daxunxun.com/banner').then(res => { // 请求数据成功
+    /**
+     * ['/images/1.jpg']
+     * ['https://www.daxunxun.com/images/1.jpg']
+     */
+      let arr = []
+      res.data.map(item => {
+        arr.push('https://www.daxunxun.com' + item)
+      })
+      // console.log(arr)
+      this.bannerlist = arr
+    }).catch(err => { // 请求失败
+      console.log(err)
+    })
+  }
+}
+</script>
+<style lang="scss">
+@import '@/lib/reset.scss';
+.container {
+  overflow: auto;
+  .content{
+    .header_relationship {
+      padding: .4rem 1rem;
+      background-color: #f4f4f4;
+      .header_title {
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        color: #cacaca;
+        align-items: center;
+        margin-bottom: 1rem; // .back {   }
+        p {
+          font-size: 1rem;
+          color: #9d9d9d;
+        } // .search { }
+      }
+    }
+    .van-search__content{
+      background: rgb(236, 236, 236);
+      border-radius: .2rem;
+    }
+    .waiting {
+      padding-left: 1rem;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #eee;
+      border-top: 1px solid #eee;
+      background-color: #EEE;
+      .waiting_l {
+        display: flex;
+        justify-content: space-around;
+        img {
+          width: 3.13rem;
+          height: 3.13rem;
+          border-radius: 50%;
+        }
+        .waiting_cont {
+          // height: 8rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          font-size: .88rem;
+          span {
+            color: #666;
+            margin: .5rem 0;
+          }
+          p {
+            color: #B2B2B2;
+            margin: 0 1rem;
+          }
+          .img_box {
+            display: flex;
+            justify-content: space-between;
+            img {
+              width: 1.88rem;
+              height: 1.88rem;
+              margin: .5rem .3rem;
+            }
+          }
+        }
+      }
+      i {
+        display: flex;
+        align-items: center;
+        color: #B0B0B0;
+        font-size: .75rem;
+        margin-right: .5rem;
+      }
+    }
+    .thingList {
+      padding-left: 1rem;
+      li {
+      padding: .5rem 0;
+        border-bottom: 1px solid #d2d2d2;
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+        img {
+          width: 3.13rem;
+          height: 3.13rem;
+          border-radius: 50%;
+          margin-right: 1rem;
+        }
+        .thingList_cont {
+        }
+      }
+    }
+  }
+}
+</style>
