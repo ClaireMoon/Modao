@@ -27,11 +27,12 @@
               </li>
             </ul>
           </van-popup>
+
         </div>
       </div>
       <van-search placeholder="请输入搜索关键词" v-model="value" />
       <div class="waiting">
-        <div class="waiting_l">
+        <div class="waiting_l" @click="Goingtodo">
           <img src="../../../public/img/1.jpg" alt="">
           <div class="waiting_cont">
             <span>待处理事项</span>
@@ -49,29 +50,29 @@
         <li>
           <img src="../../../public/img/5.jpg" alt="">
           <div class="thingList_cont">
-            <span>待处理事项</span>
-            <p>3个请求待处理。</p>
+            <span>看准小助手</span>
+            <p>xxx你好，来到看准的第二天，我门特意...</p>
           </div>
         </li>
         <li>
           <img src="../../../public/img/6.jpg" alt="">
           <div class="thingList_cont">
-            <span>待处理事项</span>
-            <p>3个请求待处理。</p>
+            <span>求职招聘小助手</span>
+            <p>【消息卡片】</p>
           </div>
         </li>
         <li>
           <img src="../../../public/img/2.jpg" alt="">
           <div class="thingList_cont">
-            <span>待处理事项</span>
-            <p>3个请求待处理。</p>
+            <span>订阅信息</span>
+            <p>老鸟发布动态了</p>
           </div>
         </li>
         <li>
           <img src="../../../public/img/4.jpg" alt="">
           <div class="thingList_cont">
-            <span>待处理事项</span>
-            <p>3个请求待处理。</p>
+            <span>看准小助手</span>
+            <p>【消息卡片】</p>
           </div>
         </li>
       </ul>
@@ -82,6 +83,7 @@
 import Vue from 'vue'
 import { Swipe, SwipeItem, Icon, Row, Col, Search, Popup } from 'vant'
 import axios from 'axios'
+// import Header from '@/components/Header.vue'
 
 Vue.use(Icon)
 Vue.use(Swipe).use(SwipeItem)
@@ -90,6 +92,9 @@ Vue.use(Search)
 Vue.use(Popup)
 
 export default {
+  components: {
+    // headers: Header
+  },
   data () {
     return {
       bannerlist: [],
@@ -104,26 +109,15 @@ export default {
     showPopup () {
       this.show = true;
     },
+    Goingtodo () {
+      this.$router.push({ path: 'goingtodo'})
+    }
   },
   mounted () {
-    axios.get('https://www.daxunxun.com/banner').then(res => { // 请求数据成功
-    /**
-     * ['/images/1.jpg']
-     * ['https://www.daxunxun.com/images/1.jpg']
-     */
-      let arr = []
-      res.data.map(item => {
-        arr.push('https://www.daxunxun.com' + item)
-      })
-      // console.log(arr)
-      this.bannerlist = arr
-    }).catch(err => { // 请求失败
-      console.log(err)
-    })
   }
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 @import '@/lib/reset.scss';
 .container {
   overflow: auto;

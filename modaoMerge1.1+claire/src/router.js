@@ -69,6 +69,30 @@ export default new Router({
       }
     },
     {
+      path: '/goingtodo',
+      name: 'goingtodo',
+      components: {
+        default: () => import('@/views/news/Goingtodo.vue'),
+        footer: Footer
+      }
+    },
+    {
+      path: '/setting',
+      name: 'setting',
+      components: {
+        default: () => import('@/views/news/setting.vue'),
+        footer: Footer
+      }
+    },
+    {
+      path: '/contact',
+      name: 'contact',
+      components: {
+        default: () => import('@/views/contact/index.vue'),
+        footer: Footer
+      }
+    },
+    {
       path: '/contact',
       name: 'contact',
       components: {
