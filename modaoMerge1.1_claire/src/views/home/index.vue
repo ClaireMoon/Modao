@@ -21,7 +21,8 @@
         <router-link to="/question" tag="span" class="question">问答</router-link>
       </div>
       <ul class="recommend">
-        <li>
+        <!-- <li class="proitem" v-for="item of test" :key="item.id" @click="goDetail(item.id)"> -->
+        <li @click="goDetail">
           <div class="title">
             <div class="title_l">推荐</div>
             <div class="title_r">换一批</div>
@@ -171,6 +172,11 @@ export default {
       bannerlist: []
     }
   },
+  methods: {
+    goDetail () {
+      this.$router.push({ path: 'detail/' })
+    }
+  },
   mounted () {
     axios.get('https://www.daxunxun.com/banner').then(res => { // 请求数据成功
     /**
@@ -189,7 +195,7 @@ export default {
   }
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 @import '@/lib/reset.scss';
 .container{
   .content{

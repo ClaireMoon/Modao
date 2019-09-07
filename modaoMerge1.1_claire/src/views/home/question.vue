@@ -35,12 +35,46 @@
       <ul class="info">
         <li class="info_li">
           <h4>面试中如何回答“为什么从上一家公司离职”？</h4>
-          <p>首先我们要先了解面试官想要从这道问题了解到什么：</p>
+          <p>首先我们要先了解面试官想要从这道问题了解到什么:</p>
           <p>1.面试官视图从中了解到你的求职动机，愿望以及其他事情.面试官视图从中了解到你的求职动机，愿望以及其他事情.面试官视图从中了解到你的求职动机，愿望以及其他事情</p>
           <img src="../../../public/img/4.jpg" alt="">
           <div class="info_li_foot">
-            <img src="../../../public/img/6.jpg" alt="">
-            <span>恰是惊鸿</span>
+            <div class="li_foot_l">
+              <img src="../../../public/img/6.jpg" alt="">
+              <span>恰是惊鸿</span>
+            </div>
+            <div class="li_foot_r">
+              <span>1.7W查看</span>
+              <span>76个回答</span>
+            </div>
+          </div>
+        </li>
+        <li class="info_li">
+          <h4>提离职公司加薪挽留，怎么办？？</h4>
+          <p>首先我们要先了解面试官想要从这道问题了解到什么:</p>
+          <p>1.面试官视图从中了解到你的求职动机，愿望以及其他事情.面试官视图从中了解到你的求职动机，愿望以及其他事情.面试官视图从中了解到你的求职动机，愿望以及其他事情</p>
+          <img src="../../../public/img/5.jpg" alt="">
+          <div class="info_li_foot">
+            <div class="li_foot_l">
+              <img src="../../../public/img/6.jpg" alt="">
+              <span>恰是惊鸿</span>
+            </div>
+            <div class="li_foot_r">
+              <span>1.7W查看</span>
+              <span>76个回答</span>
+            </div>
+          </div>
+        </li>
+        <li class="info_li">
+          <h4>提离职公司加薪挽留，怎么办？？</h4>
+          <p>首先我们要先了解面试官想要从这道问题了解到什么:</p>
+          <p>1.面试官视图从中了解到你的求职动机，愿望以及其他事情.面试官视图从中了解到你的求职动机，愿望以及其他事情.面试官视图从中了解到你的求职动机，愿望以及其他事情</p>
+          <img src="../../../public/img/7.png" alt="">
+          <div class="info_li_foot">
+            <div class="li_foot_l">
+              <img src="../../../public/img/6.jpg" alt="">
+              <span>恰是惊鸿</span>
+            </div>
             <div class="li_foot_r">
               <span>1.7W查看</span>
               <span>76个回答</span>
@@ -123,17 +157,48 @@ export default {
     }
     .info {
       .info_li {
-        h4 {}
-        p {}
+        margin: .5rem 0;
+        h4 {
+          margin:.5rem 0 .5rem 1rem;
+          font-size: .88rem;
+          color: #808080;
+        }
+        p {
+          margin:.5rem 0 .5rem  1rem;
+          font-size: .75rem;
+          color: #a6a6a6;
+          width: 18.25rem;
+          text-overflow:ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+        }
         img {
-          width: 23.44rem;
+          width: 100%;
           height: 12.5rem;
         }
         .info_li_foot {
-          img {}
-          span {}
+          display: flex;
+          justify-content: space-between;
+          .li_foot_l {
+            margin-left: 1rem;
+            img {
+              width: 1.25rem;
+              height: 1.25rem;
+              border-radius: 50%;
+            }
+            span {
+              margin-left: .5rem;
+              font-size: .63rem;
+              color: #999;
+            }
+          }
           .li_foot_r {
-            span {}
+            display: flex;
+            span {
+              margin: 0 .5rem;
+              font-size: .63rem;
+              color: #999;
+            }
           }
         }
       }

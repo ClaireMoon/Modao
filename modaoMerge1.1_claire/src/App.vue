@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <transition name="trans">
+      <router-view></router-view>
+    </transition>
     <router-view name="footer"></router-view>
   </div>
 </template>
@@ -71,6 +73,21 @@ html, body, #app {
         }
       }
     }
+  }
+  .trans-enter {
+    transform: translateX(100%)
+  }
+  .trans-enter-active {
+    transition: all .5s;
+  }
+  .trans-enter-to, .trans-leave {
+    transform: translateX(0)
+  }
+  .trans-leave-to {
+    transform: translateX(-100%)
+  }
+  .trans-leave-active {
+    transition: all 0;
   }
 }
 </style>

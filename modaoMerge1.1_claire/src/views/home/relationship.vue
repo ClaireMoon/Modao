@@ -30,7 +30,7 @@
           <p>人脉探索</p>
         </div>
         <div class="more"> <!--@click="more"-->
-          <img src="../../../public/img/3.png" alt="">
+          <van-switch :value="checked" @input="onInput" size="1.25rem" active-color="#07c160" inactive-color="#9d9d9d"/>
           <i>8000+ </i>
           <van-icon name="arrow" size="1.25rem"/>
         </div>
@@ -101,11 +101,26 @@
 </template>
 <script>
 import Vue from 'vue'
-import { Icon, Search } from 'vant'
+import { Icon, Search, Switch, Dialog } from 'vant'
 Vue.use(Icon)
 Vue.use(Search)
+Vue.use(Switch)
+Vue.use(Dialog)
 export default {
+  data () {
+    return {
+      checked: true
+    }
+  },
   methods: {
+    onInput (checked) {
+      Dialog.confirm ({
+        title: '提醒',
+        message: '是否切换开关？'
+      }).then(() => {
+        this.checked = checked
+      })
+    },
     back () {
       // this.$router.push({ path: 'relationship'})
       this.$router.back()
